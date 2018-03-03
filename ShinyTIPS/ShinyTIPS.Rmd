@@ -6,7 +6,7 @@ date: "2017/3/3"
 output:
   xaringan::moon_reader:
     toc: true
-    css: [default, zh-CN.css]
+    css: [default, jp.css, zh-CN.css]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -36,11 +36,8 @@ class: xlarge
 - アナリスト -> エンジニア
 
 - Rの仕事が無くなった
-
 - おじさん...？
-
 - Shinyおじさんで！
-
 - 最近はReactを書いたりAWS触ったり。
 
 ]
@@ -817,20 +814,6 @@ background-position: 90% 8%
 ![](./img/appsilon_oss.png)
 
 ---
-
-## shiny.i18n まとめ
-
-- アプリが大きくなってきたら Module化を検討する
-
-- Moduleとは、ちいさなui, serverのようなもの
-
-- `shiny::NS` により、名前空間管理が容易に
-
-- shinydashboardと併用すると便利
-
-- Bookmark機能も使える
-
----
 class: inverse, center, middle
 
 ## Shinytest
@@ -893,8 +876,7 @@ class: center, middle
 
 .pull-left[
 
-![](./img/wch.png)
-
+![](./img/wch.png) 
 ]
 
 ---
@@ -915,7 +897,6 @@ Shinyは大きい規模のコードを公開している人が少ない。
 - 関数はどうまとめるか
 
 ```
-.
 ├── ui.R
 ├── server.R
 ├── global.R # 全部sourceする
