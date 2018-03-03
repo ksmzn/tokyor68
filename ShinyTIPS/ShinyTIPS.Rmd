@@ -377,25 +377,25 @@ setBookmarkExclude(c("x", "y"))
 
 ---
 
-# さらにBookmark機能を使いこなす
+# さらにBookmark機能を使う
 
 様々なタイミングで実行されるcallbackが用意されている。
 
+#### ブックマークする前
+
 - `onBookmark`
 
-ブックマークする前
+#### ブックマークした後
 
 - `onBookmarked`
 
-ブックマークした後
+#### 復元する前
 
 - `onRestore`
 
-復元する前
+#### 復元した後
 
 - `onRestored`
-
-復元した後
 
 ---
 
@@ -836,6 +836,11 @@ class: inverse, center, middle
 ### Shinyアプリをテストしたい
 
 ---
+class: center, middle
+
+# これは次の機会に紹介します！
+
+---
 
 # Shinyアプリが壊れる
 
@@ -855,20 +860,41 @@ class: inverse, center, middle
 
 # Shinytestとは?
 
+- アプリをコードで操作し、動作をテストする
 
+- 特定時点の画面を記録できる（アプリの正常な状態）
+
+- フロントエンドでいうところのスナップショットテスト
+
+- テストを実行すると、同じ操作してスナップショットをとり、
+  正常な画面と比較する
 
 
 ---
 
-# shinytestの注意点
+# Shinytestの注意点
 
-・ShinyModuleとうまく動かない
+.pull-left[
 
-・shinydashboardと相性が悪い
+- ShinyModuleとうまく動かない
 
-・開発停滞気味？
+- shinydashboardと相性が悪い
+  
+- 僕はほとんど使えず。。。
 
-僕はほとんど使えず。。。
+- 開発停滞気味？  
+  -> 最近はWinston Chang氏がひとりで頑張ってる  
+  -> コントリビュートチャンス？
+
+  
+]
+
+.pull-left[
+
+![](./img/wch.png)
+
+]
+
 
 ---
 
