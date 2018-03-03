@@ -26,7 +26,7 @@ class: xlarge
 
 .pull-left[
 
-&lt;center&gt;&lt;img src="https://pbs.twimg.com/profile_images/3432755397/ff3c2f861a1f580c574acf273f4f3907_400x400.png" width="100px"&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="./img/matoi.png" width="100px"&gt;&lt;/center&gt;
 
 - koshi ([@ksmzn](https://twitter.com/ksmzn))
 
@@ -50,7 +50,7 @@ class: xlarge
 
 .pull-right[
 
-&lt;center&gt;&lt;img src="http://image.gihyo.co.jp/assets/images/cover/2017/9784774188775.jpg" width="200px"&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="./img/ds_book.jpg" width="200px"&gt;&lt;/center&gt;
 
 - ↑ マエショリの章を書きました。
 
@@ -900,6 +900,41 @@ class: center, middle
 
 ]
 
+---
+class: inverse, center, middle
+
+## おわりに
+
+
+
+---
+
+## 確率分布Viewerの構造
+
+Shinyは大きい規模のコードを公開している人が少ない。  
+俺こうしてるぜ！な意見お待ちしてます。
+
+- パッケージはどこで読み込むか
+- 関数はどうまとめるか
+
+```
+.
+├── ui.R
+├── server.R
+├── global.R # 全部sourceする
+├── components
+│   ├── functions.R
+│   └── modules.R # ShinyModule
+├── distributions # 確率分布
+│   ├── index.R
+│   ├── continuous
+│   └── discrete
+├── i18n/ # shiny.i18n
+├── markdown/
+├── utils/ # 便利な関数群
+├── Dockerfile
+└── www
+```
 
 ---
 
@@ -917,7 +952,7 @@ class: center, middle
 ---
 
 class: inverse, middle, center
-background-image: url(http://blog-imgs-92.fc2.com/l/i/v/livesense/1299664817ax.jpg)
+background-image: url(./img/kan.jpg)
 background-size: contain
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
