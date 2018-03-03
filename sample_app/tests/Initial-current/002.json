@@ -1,0 +1,69 @@
+{
+  "input": {
+    "petal_col": "Petal.Length",
+    "sepal_col": "Sepal.Width"
+  },
+  "output": {
+    "petal_plot": {
+      "src": "[image data sha1: 4decaf95b2173d2791fda69314ac9de8ef545530]",
+      "width": 466,
+      "height": 400,
+      "coordmap": [
+        {
+          "domain": {
+            "left": 0.76,
+            "right": 7.24,
+            "bottom": -1.48,
+            "top": 38.48
+          },
+          "range": {
+            "left": 59.04,
+            "right": 435.76,
+            "bottom": 325.56,
+            "top": 58.04
+          },
+          "log": {
+            "x": null,
+            "y": null
+          },
+          "mapping": {
+
+          }
+        }
+      ]
+    },
+    "petal_values": "<table  class = 'table shiny-table table- spacing-s' style = 'width:auto;'>\n<thead> <tr> <th style='text-align: right;'> mean <\/th>  <\/tr> <\/thead> <tbody>\n  <tr> <td align=\"right\"> 3.76 <\/td> <\/tr>\n   <\/tbody> <\/table>",
+    "sepal_plot": {
+      "src": "[image data sha1: 4decaf95b2173d2791fda69314ac9de8ef545530]",
+      "width": 466,
+      "height": 400,
+      "coordmap": [
+        {
+          "domain": {
+            "left": 0.76,
+            "right": 7.24,
+            "bottom": -1.48,
+            "top": 38.48
+          },
+          "range": {
+            "left": 59.04,
+            "right": 435.76,
+            "bottom": 325.56,
+            "top": 58.04
+          },
+          "log": {
+            "x": null,
+            "y": null
+          },
+          "mapping": {
+
+          }
+        }
+      ]
+    },
+    "sepal_values": "<table  class = 'table shiny-table table- spacing-s' style = 'width:auto;'>\n<thead> <tr> <th style='text-align: right;'> mean <\/th>  <\/tr> <\/thead> <tbody>\n  <tr> <td align=\"right\"> 3.06 <\/td> <\/tr>\n   <\/tbody> <\/table>"
+  },
+  "export": {
+
+  }
+}

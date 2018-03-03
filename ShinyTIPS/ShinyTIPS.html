@@ -25,15 +25,25 @@ class: xlarge
 # Who Are You
 
 .pull-left[
+
 &lt;center&gt;&lt;img src="https://pbs.twimg.com/profile_images/3432755397/ff3c2f861a1f580c574acf273f4f3907_400x400.png" width="100px"&gt;&lt;/center&gt;
+
 - koshi ([@ksmzn](https://twitter.com/ksmzn))
+
 - 株式会社ALBERT
+
 - 頑張っていきましょう
+
 - Rおじさん
+
 - アナリスト -&gt; エンジニア
+
 - Rの仕事が無くなった
+
 - Shinyおじさん
+
 - 最近はReactを書いたりAWS触ったり。
+
 ]
 
 .pull-right[
@@ -41,17 +51,63 @@ class: xlarge
 &lt;center&gt;&lt;img src="http://image.gihyo.co.jp/assets/images/cover/2017/9784774188775.jpg" width="200px"&gt;&lt;/center&gt;
 
 - ↑ マエショリの章を書きました。
+
 - 新人研修にいいぞ
+
 - 1人100冊ほど！お願いします！
 
 ]
 
+---
+
+# 最近作ったもの1  「ThankYouStars」
+
+.pull-left[
+
+- Rパッケージ。[CRAN](https://cran.r-project.org/web/packages/ThankYouStars/index.html) もあるよ
+
+- インストール済の全ての  
+  パッケージに対し、GitHubでスターを付けまくることが可能！
+
+- スカッとしたい人におすすめ
+
+]
+
+.pull-right[
+
+
+![](./img/thankyoustars.png)
+
+]
 
 ---
 
-# 確率分布 Viewer 
+# 最近作ったもの2  「codicR」
 
-[http://statdist.ksmzn.com/](http://statdist.ksmzn.com/)
+- RStudioアドイン。
+- `devtools::install_github("ksmzn/codicR")`
+- 「[codic](https://codic.jp/)」のAPIを叩き、日本語を英語に変換する
+
+![](./img/20180303_TokyoR_demo_codicr.gif)
+
+
+
+---
+
+# 最近作ったもの3  「HOXO-M Card」
+
+- 名刺作成Shinyアプリ
+- [https://ksmzn.shinyapps.io/hoxom-card/](https://ksmzn.shinyapps.io/hoxom-card/)
+- 誰でも匿名知的集団ホクソエムを名乗れる夢アプリ
+- Shiny+magick
+
+![](./img/hoxom-card.png)
+
+---
+
+# 「確率分布 Viewer 」
+
+リニューアルしました。 [http://statdist.ksmzn.com/](http://statdist.ksmzn.com/)
 
 ![](./img/pdv_top.png)
 
@@ -67,14 +123,77 @@ class: xlarge
 - 平均・分散も表示
 - コード公開してます！PullRequest！お願いします！
   -&gt; [https://github.com/ksmzn/ProbabilityDistributionsViewer](https://github.com/ksmzn/ProbabilityDistributionsViewer)
-
+  
 ![](./img/pdv_github.png)
+
 
 ---
 
 # DEMO
 
 ![](./img/20180303_TokyoR_demo_pdv01.gif)
+
+---
+background-image: url("./img/shiny.svg")
+background-size: 200px
+background-position: 90% 8%
+
+
+# Shinyとは？？？
+
+.pull-left[
+
+- https://shiny.rstudio.com/
+
+- R言語でWebアプリを作れる  
+  パッケージ
+
+- HTMLやCSSの知識がなくても作れる（あると素敵）
+
+- 分析結果の可視化や、ダッシュボードの作成が容易
+
+- RStudioメンバーが作っている
+
+]
+
+.pull-right[
+  
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+
+
+![](./img/shiny_official.png)
+
+]
+
+
+---
+
+# 詳しくは
+
+[@u_ribo](https://twitter.com/u_ribo) さんの資料を読もう！  
+(もうこのスライドだけで良いんじゃないかな)
+
+&lt;center&gt;&lt;a href="https://cdn.rawgit.com/uribo/talk_170722tokyor63/8836e635/slides/slide.html"&gt;&lt;img src="./img/ref_uribo.png" width="900px"&gt;&lt;/a&gt;&lt;/center&gt;
+
+---
+
+# 本日は
+
+- 先程のスライドの続編です
+
+- Shinyの新機能をご紹介します
+
+  - Bookmark
+  
+  - ShinyModule
+  
+- 自分がShinyアプリをつくる上で、便利だったパッケージをご紹介します
+
+  - shiny.i18n
+
 
 ---
 
@@ -103,10 +222,9 @@ class: xlarge
 ![](./img/20180303_TokyoR_demo_pdv03.gif)
 
 ---
+class: inverse, center, middle
 
-# Shinyの状態を共有したい
-
-Bookmark 機能を使いましょう
+# Bookmark 機能
 
 
 
@@ -115,11 +233,16 @@ Bookmark 機能を使いましょう
 # Bookmark 機能とは？
 
 - ver0.14から追加された新機能
-- Shinyアプリの状態を保存できる
+
+- Shinyアプリの状態をURLに保存できる
+
 - 他の人に共有したいときに便利
+
 - Shiny起動時にアプリの状態を復元する
+
 - 状態とは、input。
-- URLに埋め込む方法と、Serverにファイルとして保存する方法が使える
+
+- URLにinputを全て埋め込む方法と、Serverにファイルとして保存する方法が使える
 
 ---
 
@@ -129,13 +252,15 @@ Bookmark 機能を使いましょう
 inputの値をクエリパラメータとして埋め込む。
 
 ```
-http://statdist.ksmzn.com/?_inputs_&amp;selected_language=%22Japanese%22&amp;norm-mean=0&amp;norm-sd=1
+http://statdist.ksmzn.com/?_inputs_&amp;selected_language=%22Japanese%22
+&amp;norm-mean=0&amp;norm-sd=1
 ```
 
-アプリ起動時に、このURLの値をインプットとし、状態を復元する。
+アプリ起動時に、このURLの値をインプットとし、状態を復元する。  
 パラメータが多いと、URLが長くなってしまう。
 
-[DEMO](https://gallery.shinyapps.io/113-bookmarking-url/)
+
+![](./img/bookmark_gallery_01.png)
 
 ---
 
@@ -145,17 +270,13 @@ ShinyServerにディレクトリを作り、inputをRDSファイルに保存す�
 state_idがURLに埋め込まれ、そのstate_idに対応したRDSファイルが保存される。
 
 OSS版ShinyServerの場合、version 1.4.7以降が必要。
-shinyapps.ioはまだ対応していないらしい。
+  shinyapps.ioはまだ対応していないらしい。
 
-TODO:
-画像
-ファイルができている場面
+![](./img/bookmark_server.png)
 
 ---
 
 # Bookmarkのシンプル例
-
-[shiny公式サイトから引用](https://shiny.rstudio.com/articles/bookmarking-state.html)しました。
 
 ```r
 ui &lt;- function(request) {
@@ -178,10 +299,8 @@ server &lt;- function(input, output, session) {
 shinyApp(ui, server, enableBookmarking = "url")
 ```
 
-このアプリを起動しましょう。
-以下のようにテキストボックスに文字を入力してBookmarkボタンを押すと、モーダルが出現し、ブックマーク用のURLが表示されます。
-これをコピーし、他の人の共有することが可能です。
-試しに、以下のGIFのようにブラウザに直接URLを貼り付けてみると、入力したsushiという文字が初期値として入力された状態になっています。
+[shiny公式サイト](https://shiny.rstudio.com/articles/bookmarking-state.html)の例
+
 
 ---
 
@@ -189,7 +308,7 @@ shinyApp(ui, server, enableBookmarking = "url")
 
 やることは2つ。
 
-- uiのオブジェクトを関数にする
+① uiのオブジェクトを関数にする
 
 ```r
 ui &lt;- function(request) {
@@ -207,7 +326,7 @@ ui &lt;- function(request) {
 # Bookmarkの書き方 (URL埋め込み) 
 
 
-- `enableBookmarking()` 関数を呼ぶか、  
+② `enableBookmarking()` 関数を呼ぶか、  
 `shinyApp()` 関数の引数に指定する
 
 app.R
@@ -226,7 +345,7 @@ server保存の場合、「url」でなく「server」に変更する。
 
 ---
 
-## shinydashboardで使えるの？
+# shinydashboardで使えるの？
 
 使える。
 
@@ -263,20 +382,45 @@ setBookmarkExclude(c("x", "y"))
 
 # さらにBookmark機能を使いこなす
 
-4つの段階でカスタマイズできる
+様々なタイミングで実行されるcallbackが用意されている。
 
+- `onBookmark`
 
+ブックマークする前
 
+- `onBookmarked`
 
+ブックマークした後
 
+- `onRestore`
 
+復元する前
+
+- `onRestored`
+
+復元した後
 
 ---
 
-# Shinyアプリが大きくなってきた...
+# Bookmark まとめ
 
-ShinyModule機能を使いましょう
+- Shinyの状態を保存できる機能
 
+- URLに全てinputを埋め込む方法と、
+  ServerにRDSファイルを保存する方法がある
+
+- `setBookmarkExclude()` でinputする値を除外できる。
+
+- callbackを使いこなすことによって、
+  カスタマイズが可能
+
+
+---
+class: inverse, center, middle
+
+# ShinyModule
+
+### アプリを分割する
 
 
 ---
@@ -286,7 +430,7 @@ ShinyModule機能を使いましょう
 - ちっちゃなui.R, server.Rのようなもの。
 - [バージョン0.13.0から追加](https://blog.rstudio.com/2016/01/20/shiny-0-13-0/) 。
 
-## ShinyModuleは何が嬉しいのか
+# ShinyModuleは何が嬉しいのか
 
 - 関数のように再利用できる。
 - 似たようなパーツを作る際にコピペせずに済む。
@@ -301,15 +445,36 @@ ShinyModule機能を使いましょう
 
 Shinyアプリが大きくなってくると、input・outputのIDが被りそうになる。
 
-(ここは図にする）
+![](./img/shinymodule_00.png)
 
-例えば、複数のグラフを載せるアプリの場合、outputのIDを `output$result1_plot` , `output$result2_plot` , `output$result3_plot` ... として、管理が大変になったり。
-さらに、各プロットの平均も載せようとして、 `output$result1_mean` , `output$result2_mean` , `output$result3_mean` ... としてしまうと、ますます混乱していきます。
 
-そんなときこそ、ShinyModuleを使うときです。
-まず、server.RからModuleとして切り離し、そのModuleの中で `output$plot` , `output$mean` という名前でserver側の処理を書きます。
-次に、同様にui部分でもModuleとして切り離し、各グラフを識別する ID （この場合、 `result1` , `result2` , `result3` ... ）を記載するだけでOKです。
-これだけで、`result1` を渡したときは、アプリ全体の中では `output$result1-plot` , `output$result1-mean` として認識されるようになります。
+---
+
+## 名前空間がやばい
+
+Shinyアプリが大きくなってくると、input・outputのIDが被りそうになる。
+
+![](./img/notmodule.png)
+
+
+---
+
+## 名前空間がやばい
+
+Shinyアプリが大きくなってくると、input・outputのIDが被りそうになる。
+
+![](./img/module01.png)
+
+
+---
+
+## 名前空間がやばい
+
+Shinyアプリが大きくなってくると、input・outputのIDが被りそうになる。
+
+![](./img/module02.png)
+
+
 
 ---
 
@@ -343,27 +508,15 @@ irisPlot &lt;- function(){
 }
 ```
 
-```r
-# UI
-irisPlotUI &lt;- function(){
-  # UIロジック
-}
-  
-# Server
-irisPlot &lt;- function(){
-  # Serverロジック
-}
-```
-
 ---
 
 # ShinyModule実例 〜 Module無し 〜
 
 .pull-left[
 
-irisのヒストグラムを作るShinyアプリ
+irisのヒストグラムを作るShinyアプリ。
 
-上側にPetal, 下側にSepalの、それぞれ Length か Width のヒストグラムを表示するアプリです。
+上側にPetal, 下側にSepalの、それぞれ Length か Width のヒストグラムを表示する。
 
 ]
 
@@ -525,7 +678,7 @@ shinyApp(ui, server)
 `onBookmark` などは、Module内部でも定義できる。  
 Moduleごとにexcludeする値を決められる
 
-```
+```r
 capitalizer &lt;- function(input, output, session) {
   output$out &lt;- renderText({
     toupper(input$text)
@@ -534,10 +687,8 @@ capitalizer &lt;- function(input, output, session) {
     state$values$hash &lt;- digest::digest(input$text, "md5")
   })
 }
-
 server &lt;- function(input, output, session) {
   callModule(capitalizer, "tc")
-
   output$out &lt;- renderText({
     input$text
   })
@@ -559,10 +710,155 @@ shinyApp(ui, server, enableBookmarking = "url")
 - Bookmark機能も使える
 
 ---
+class: inverse, center, middle
 
-# Shinyアプリをテストしたい
+# shiny.i18n
 
-shinytestがおすすめです。
+### Shinyアプリを国際対応したい
+
+---
+
+# shiny.i18nとは
+
+- i18nはinternationalization（国際化）の略
+- `i` と `n` の間に18文字あるから i18n
+- shiny.i18nはshinyで言語切り替えできるようにするパッケージ
+- [Appsilon](https://appsilondatascience.com/) 製
+
+![](./img/20180303_TokyoR_demo_i18n01.gif)
+
+
+---
+
+# shiny.i18n の使い方
+
+- は無いのでソースとサンプルアプリのコードを読む
+- やってることは非常に単純
+- 文言の対応表をCSVかJSONを用意する
+- それをDataFrameとして読み込み、
+- ShinyのInputに応じて出力列を変える
+
+![](./img/i18n_translator.png)
+
+---
+
+# JSONの例
+
+```r
+{
+  "cultural_date_format": "%d-%m-%Y",
+  "languages": [
+    "en",
+    "pl",
+    "jp"
+  ],
+  "translation": [
+    {
+      "en": "Hello Shiny!",
+      "pl": "Witaj Shiny!",
+      "jp": "こんにちは、Shiny!"
+    },
+    {
+      "en": "Histogram of x",
+      "pl": "Histogram x",
+      "jp": "xのヒストグラム"
+    },
+    :
+    :
+
+```
+
+---
+
+# shiny.i18n 使い方
+
+Translatorクラスが用意されている
+
+```r
+&gt; library(shiny.i18n)
+&gt; translator &lt;- Translator$new(translation_json_path = "./data/translation.json")
+&gt; translator$translate("Hello Shiny!")
+[1] "Hello Shiny!"
+
+# 日本語に切り替え
+&gt; translator$set_translation_language('jp')
+&gt; translator$translate("Hello Shiny!")
+[1] "こんにちは、Shiny!"
+```
+
+---
+
+# 確率分布Viewerの翻訳
+
+- こんな感じで泥臭く書いている
+- PullRequest！お待ちしてます！
+
+![](./img/pdv_translation_csv.png)
+
+---
+background-image: url("./img/appsilon.png")
+background-size: 200px
+background-position: 90% 8%
+
+# Appsilonとは？？？？
+
+- shinyのパッケージをたくさん作っている
+  ~~謎の匿名知的集団~~ ポーランド企業
+
+![](./img/appsilon_team.png)
+
+---
+
+# Appsilon のShinyパッケージ
+
+- 開発そんなに活発ではないので、  
+  コントリビュートのチャンス！
+- 個人的にはshiny-routerは面白い
+
+![](./img/appsilon_oss.png)
+
+---
+
+# shiny.i18n まとめ
+
+- アプリが大きくなってきたら Module化を検討する
+
+- Moduleとは、ちいさなui, serverのようなもの
+
+- `shiny::NS` により、名前空間管理が容易に
+
+- shinydashboardと併用すると便利
+
+- Bookmark機能も使える
+
+---
+class: inverse, center, middle
+
+# Shinytest
+
+### Shinyアプリをテストしたい
+
+---
+
+# Shinyアプリが壊れる
+
+- コードを変更した
+
+- Rをアップグレードした
+
+- Shinyをアップグレードした
+
+- パッケージをアップグレードした
+
+- データを追加した
+
+## -&gt; Shinytestでテストしよう！
+
+---
+
+# Shinytestとは?
+
+
 
 
 ---
@@ -575,19 +871,6 @@ shinytestがおすすめです。
 
 僕はほとんど使えず。。。
 
----
-
-# Shinyアプリを国際対応したい
-
-shiny.i18nがおすすめです。
-
----
-
-# Appsilonとは
-
-- shiny.i18n
-- shiny.router
-- shiny.semantic
 
 ---
 
