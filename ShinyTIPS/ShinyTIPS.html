@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 
 class: xlarge
 
-# Who Are You
+## Who Are You
 
 .pull-left[
 
@@ -40,7 +40,9 @@ class: xlarge
 
 - Rの仕事が無くなった
 
-- Shinyおじさん
+- おじさん...？
+
+- Shinyおじさんで！
 
 - 最近はReactを書いたりAWS触ったり。
 
@@ -60,7 +62,7 @@ class: xlarge
 
 ---
 
-# 最近作ったもの1  「ThankYouStars」
+## 最近作ったもの1  「ThankYouStars」
 
 .pull-left[
 
@@ -82,7 +84,7 @@ class: xlarge
 
 ---
 
-# 最近作ったもの2  「codicR」
+## 最近作ったもの2  「codicR」
 
 - RStudioアドイン。
 - `devtools::install_github("ksmzn/codicR")`
@@ -94,7 +96,7 @@ class: xlarge
 
 ---
 
-# 最近作ったもの3  「HOXO-M Card」
+## 最近作ったもの3  「HOXO-M Card」
 
 - 名刺作成Shinyアプリ
 - [https://ksmzn.shinyapps.io/hoxom-card/](https://ksmzn.shinyapps.io/hoxom-card/)
@@ -105,7 +107,7 @@ class: xlarge
 
 ---
 
-# 「確率分布 Viewer 」
+## 「確率分布 Viewer 」
 
 リニューアルしました。 [http://statdist.ksmzn.com/](http://statdist.ksmzn.com/)
 
@@ -114,7 +116,7 @@ class: xlarge
 ---
 class: xlarge
 
-# 確率分布 Viewer とは？
+## 確率分布 Viewer とは？
 
 - 確率分布をインタラクティブに触れるアプリ
 - Shiny + shinydashboard + NVD3.js
@@ -129,7 +131,7 @@ class: xlarge
 
 ---
 
-# DEMO
+## DEMO
 
 ![](./img/20180303_TokyoR_demo_pdv01.gif)
 
@@ -139,7 +141,7 @@ background-size: 200px
 background-position: 90% 8%
 
 
-# Shinyとは？？？
+## Shinyとは？？？
 
 .pull-left[
 
@@ -171,7 +173,7 @@ background-position: 90% 8%
 
 ---
 
-# 詳しくは
+## 詳しくは
 
 [@u_ribo](https://twitter.com/u_ribo) さんの資料を読もう！  
 (もうこのスライドだけで良いんじゃないかな)
@@ -180,7 +182,7 @@ background-position: 90% 8%
 
 ---
 
-# 本日は
+## 本日は
 
 - 先程のスライドの続編です
 
@@ -197,7 +199,7 @@ background-position: 90% 8%
 
 ---
 
-# 確率分布 Viewer 新機能紹介
+## 確率分布 Viewer 新機能紹介
 
 新機能1: ブックマーク機能
 
@@ -206,7 +208,7 @@ background-position: 90% 8%
 
 ---
 
-# 確率分布 Viewer 新機能紹介
+## 確率分布 Viewer 新機能紹介
 
 新機能1: ブックマーク機能
 
@@ -215,7 +217,7 @@ background-position: 90% 8%
 
 ---
 
-# 確率分布 Viewer 新機能紹介
+## 確率分布 Viewer 新機能紹介
 
 新機能2: 英語・日本語切り替え機能
 
@@ -224,13 +226,13 @@ background-position: 90% 8%
 ---
 class: inverse, center, middle
 
-# Bookmark 機能
+## Bookmark 機能
 
 
 
 ---
 
-# Bookmark 機能とは？
+## Bookmark 機能とは？
 
 - ver0.14から追加された新機能
 
@@ -246,7 +248,7 @@ class: inverse, center, middle
 
 ---
 
-# Bookmark ~ URL 埋め込み ~
+## Bookmark ~ URL 埋め込み ~
 
 もっとも単純でわかりやすい方法。
 inputの値をクエリパラメータとして埋め込む。
@@ -264,7 +266,7 @@ http://statdist.ksmzn.com/?_inputs_&amp;selected_language=%22Japanese%22
 
 ---
 
-# Bookmark ~ Server保存 ~
+## Bookmark ~ Server保存 ~
 
 ShinyServerにディレクトリを作り、inputをRDSファイルに保存する。
 state_idがURLに埋め込まれ、そのstate_idに対応したRDSファイルが保存される。
@@ -276,7 +278,7 @@ OSS版ShinyServerの場合、version 1.4.7以降が必要。
 
 ---
 
-# Bookmarkのシンプル例
+## Bookmarkのシンプル例
 
 ```r
 ui &lt;- function(request) {
@@ -304,7 +306,7 @@ shinyApp(ui, server, enableBookmarking = "url")
 
 ---
 
-# Bookmarkの書き方 (URL埋め込み) 
+## Bookmarkの書き方 (URL埋め込み) 
 
 やることは2つ。
 
@@ -323,7 +325,7 @@ ui &lt;- function(request) {
 
 ---
 
-# Bookmarkの書き方 (URL埋め込み) 
+## Bookmarkの書き方 (URL埋め込み) 
 
 
 ② `enableBookmarking()` 関数を呼ぶか、  
@@ -345,7 +347,7 @@ server保存の場合、「url」でなく「server」に変更する。
 
 ---
 
-# shinydashboardで使えるの？
+## shinydashboardで使えるの？
 
 使える。
 
@@ -362,7 +364,7 @@ sidebarMenu(id = "sidebar",
 
 ---
 
-# Bookmarkする値を選べるの？
+## Bookmarkする値を選べるの？
 
  `setBookmarkExclude()` で除外できる。
 
@@ -380,7 +382,7 @@ setBookmarkExclude(c("x", "y"))
 
 ---
 
-# さらにBookmark機能を使う
+## さらにBookmark機能を使う
 
 様々なタイミングで実行されるcallbackが用意されている。
 
@@ -402,7 +404,7 @@ setBookmarkExclude(c("x", "y"))
 
 ---
 
-# Bookmark まとめ
+## Bookmark まとめ
 
 - Shinyの状態を保存できる機能
 
@@ -418,19 +420,19 @@ setBookmarkExclude(c("x", "y"))
 ---
 class: inverse, center, middle
 
-# ShinyModule
+## ShinyModule
 
 ### アプリを分割する
 
 
 ---
 
-# ShinyModuleとは
+## ShinyModuleとは
 
 - ちっちゃなui.R, server.Rのようなもの。
 - [バージョン0.13.0から追加](https://blog.rstudio.com/2016/01/20/shiny-0-13-0/) 。
 
-# ShinyModuleは何が嬉しいのか
+## ShinyModuleは何が嬉しいのか
 
 - 関数のように再利用できる。
 - 似たようなパーツを作る際にコピペせずに済む。
@@ -490,7 +492,7 @@ ShinyModuleを使えば、名前空間の管理がらくらくになる
 
 ---
 
-# ShinyModule ~ 基本の書き方 ~
+## ShinyModule ~ 基本の書き方 ~
 
 - UI部分のModuleとServer部分のModuleが必要
 - UI側は末尾が `Input` , `Output` , `UI` のいずれか
@@ -510,7 +512,7 @@ irisPlot &lt;- function(){
 
 ---
 
-# ShinyModule実例 〜 Module無し 〜
+## ShinyModule実例 〜 Module無し 〜
 
 .pull-left[
 
@@ -530,7 +532,7 @@ irisのヒストグラムを作るShinyアプリ。
 
 ---
 
-# ShinyModule実例 〜 Module無し 〜
+## ShinyModule実例 〜 Module無し 〜
 
 ShinyModuleを使わずに書く
 
@@ -556,7 +558,7 @@ shinyApp(ui, server)
 
 ---
 
-# ShinyModuleを作る ~ UI ~
+## ShinyModuleを作る ~ UI ~
 
 selectInputとplotを出力するModuleを書く.  
 
@@ -577,7 +579,7 @@ irisPlotUI &lt;- function(id, cols) {
     
 ---
 
-# ShinyModuleを使う ~ UI ~
+## ShinyModuleを使う ~ UI ~
 
  `irisPlotUI` を呼び出し、id と その他の引数を渡す
 
@@ -591,7 +593,7 @@ ui &lt;- fluidPage(
     
 ---
 
-# ShinyModuleを作る ~ Server ~
+## ShinyModuleを作る ~ Server ~
 
 通常のServerの書き方に近い。  
 引数はinput, output, sessionをはじめに書く必要がある。
@@ -610,7 +612,7 @@ irisPlot &lt;- function(input, output, session, main){
     
 ---
 
-# ShinyModuleを使う ~ Server ~
+## ShinyModuleを使う ~ Server ~
 
 server側の書き方は、少し特殊。  
 `callModule` 関数の第一引数に Module名、第二引数にid, 第三引数以降にはそのModuleで必要な値を渡す。
@@ -654,7 +656,7 @@ shinyApp(ui, server)
 
 ---
 
-# ShinyModule はどこに書けばいいんですか
+## ShinyModule はどこに書けばいいんですか
 
 `global.R` がおすすめ。
 
@@ -663,7 +665,7 @@ shinyApp(ui, server)
 
 ---
 
-# ShinyModule + shinydashboard
+## ShinyModule + shinydashboard
 
 タブページやshinydashboardを使ったページのように、  
 同じようなページをたくさん作る場合、ShinyModuleは重宝する
@@ -672,7 +674,7 @@ shinyApp(ui, server)
 
 ---
 
-# ShinyModule + Bookmark
+## ShinyModule + Bookmark
 
 当然、BookmarkはModuleに対しても機能する。  
 `onBookmark` などは、Module内部でも定義できる。  
@@ -701,7 +703,7 @@ shinyApp(ui, server, enableBookmarking = "url")
 
 ---
 
-# ShinyModule まとめ
+## ShinyModule まとめ
 
 - アプリが大きくなってきたら Module化を検討する
 - Moduleとは、ちいさなui, serverのようなもの
@@ -712,13 +714,13 @@ shinyApp(ui, server, enableBookmarking = "url")
 ---
 class: inverse, center, middle
 
-# shiny.i18n
+## shiny.i18n
 
 ### Shinyアプリを国際対応したい
 
 ---
 
-# shiny.i18nとは
+## shiny.i18nとは
 
 - i18nはinternationalization（国際化）の略
 - `i` と `n` の間に18文字あるから i18n
@@ -730,7 +732,7 @@ class: inverse, center, middle
 
 ---
 
-# shiny.i18n の使い方
+## shiny.i18n の使い方
 
 - は無いのでソースとサンプルアプリのコードを読む
 - やってることは非常に単純
@@ -742,7 +744,7 @@ class: inverse, center, middle
 
 ---
 
-# JSONの例
+## JSONの例
 
 ```r
 {
@@ -770,7 +772,7 @@ class: inverse, center, middle
 
 ---
 
-# shiny.i18n 使い方
+## shiny.i18n 使い方
 
 Translatorクラスが用意されている
 
@@ -788,7 +790,7 @@ Translatorクラスが用意されている
 
 ---
 
-# 確率分布Viewerの翻訳
+## 確率分布Viewerの翻訳
 
 - こんな感じで泥臭く書いている
 - PullRequest！お待ちしてます！
@@ -800,7 +802,7 @@ background-image: url("./img/appsilon.png")
 background-size: 200px
 background-position: 90% 8%
 
-# Appsilonとは？？？？
+## Appsilonとは？？？？
 
 - shinyのパッケージをたくさん作っている
   ~~謎の匿名知的集団~~ ポーランド企業
@@ -809,7 +811,7 @@ background-position: 90% 8%
 
 ---
 
-# Appsilon のShinyパッケージ
+## Appsilon のShinyパッケージ
 
 - 開発そんなに活発ではないので、  
   コントリビュートのチャンス！
@@ -819,7 +821,7 @@ background-position: 90% 8%
 
 ---
 
-# shiny.i18n まとめ
+## shiny.i18n まとめ
 
 - アプリが大きくなってきたら Module化を検討する
 
@@ -834,18 +836,18 @@ background-position: 90% 8%
 ---
 class: inverse, center, middle
 
-# Shinytest
+## Shinytest
 
 ### Shinyアプリをテストしたい
 
 ---
 class: center, middle
 
-# これは次の機会に紹介します！
+## これは次の機会に紹介します！
 
 ---
 
-# Shinyアプリが壊れる
+## Shinyアプリが壊れる
 
 - コードを変更した
 
@@ -857,11 +859,11 @@ class: center, middle
 
 - データを追加した
 
-## -&gt; Shinytestでテストしよう！
+### -&gt; Shinytestでテストしよう！
 
 ---
 
-# Shinytestとは?
+## Shinytestとは?
 
 - アプリをコードで操作し、動作をテストする
 
@@ -875,7 +877,7 @@ class: center, middle
 
 ---
 
-# Shinytestの注意点
+## Shinytestの注意点
 
 .pull-left[
 
@@ -901,7 +903,7 @@ class: center, middle
 
 ---
 
-# まとめ
+## まとめ
 
 - Bookmark機能でShinyアプリを共有しよう！
 
