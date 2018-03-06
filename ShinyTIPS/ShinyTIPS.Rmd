@@ -6,7 +6,7 @@ date: "2017/3/3"
 output:
   xaringan::moon_reader:
     toc: true
-    css: [default, jp.css, zh-CN.css]
+    css: [default, jp.css]
     lib_dir: libs
     nature:
       highlightStyle: github
